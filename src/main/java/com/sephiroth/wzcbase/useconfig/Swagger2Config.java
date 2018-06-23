@@ -27,7 +27,7 @@ public class Swagger2Config {
                         .version("版本号：BATE 1.0")
                         .build())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.sephiroth.wzcbase.RestfulApiController"))
+                .apis(RequestHandlerSelectors.basePackage("com.sephiroth.wzcbase.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
