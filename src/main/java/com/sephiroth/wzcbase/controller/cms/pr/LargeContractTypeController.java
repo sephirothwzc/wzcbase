@@ -20,6 +20,6 @@ public class LargeContractTypeController {
     @ApiOperation("Get:支持有条件查询分页获取合同大类")
     @GetMapping(value = "LargeContractType")
     public PageInfo<LargeContractTypeGetOutVO> getOutVOPageInfo(LargeContractTypeGetInVO param) {
-        return contractTypeServices.getOutVOPageInfo(param);
+        return contractTypeServices.getLargeOutVOPageInfo(param);
     }
 }

@@ -9,5 +9,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LargeContractTypeGetOutVO {
 
+    /**
+     * key
+     */
     private String ctTypeId;
+
+    /**
+     * 编码
+     */
+    private String ctTypeCode;
+
+    /**
+     * 名称
+     */
+    private String ctTypeName;
+
+    /**
+     * 简码
+     */
+    private String shortName;
+
+    /**
+     * 是否有效 1有效 0无效
+     */
+    private String enableFlag;
 }
