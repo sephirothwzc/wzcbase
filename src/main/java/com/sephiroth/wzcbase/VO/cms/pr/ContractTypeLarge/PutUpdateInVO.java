@@ -1,20 +1,14 @@
-package com.sephiroth.wzcbase.VO.cms.pr;
+package com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge;
 
-import com.sephiroth.wzcbase.utilsbase.PageQueryInVO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class LargeContractTypeGetInVO extends PageQueryInVO {
+public class PutUpdateInVO {
 
-    /**
-     * key
-     */
     private String ctTypeId;
 
     /**
@@ -36,4 +30,5 @@ public class LargeContractTypeGetInVO extends PageQueryInVO {
      * 是否有效 1有效 0无效
      */
     private String enableFlag;
+
 }

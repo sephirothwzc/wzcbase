@@ -1,18 +1,13 @@
 package com.sephiroth.wzcbase.servicesimpl.cms.pr;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.sephiroth.wzcbase.VO.cms.pr.LargeContractTypeGetInVO;
-import com.sephiroth.wzcbase.VO.cms.pr.LargeContractTypeGetOutVO;
-import com.sephiroth.wzcbase.dao.ContractTypeDao;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetInVO;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetOutVO;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.FindByIdGetOutVO;
 import com.sephiroth.wzcbase.services.cms.pr.ContractTypeServices;
 import com.sephiroth.wzcbase.utilscommon.MockVO;
 import lombok.val;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ContractTypeServicesImpl implements ContractTypeServices {
@@ -23,10 +18,27 @@ public class ContractTypeServicesImpl implements ContractTypeServices {
      * @return
      */
     @Override
-    public PageInfo<LargeContractTypeGetOutVO> getLargeOutVOPageInfo(LargeContractTypeGetInVO param) {
-        val resultPage = new PageInfo<LargeContractTypeGetOutVO>();
-        resultPage.setList(MockVO.mockList(LargeContractTypeGetOutVO.class, param.getPageSize()));
+    public PageInfo<ContractTypeLargeGetOutVO> getLargeOutVOPageInfo(ContractTypeLargeGetInVO param) {
+        val resultPage = new PageInfo<ContractTypeLargeGetOutVO>();
+        resultPage.setList(MockVO.mockList(ContractTypeLargeGetOutVO.class, param.getPageSize()));
         resultPage.setTotal(100);
         return resultPage;
+    }
+
+    /**
+     * 根据主键获取合同大类
+     * @param id
+     * @return
+     */
+    @Override
+    public FindByIdGetOutVO findById(String id) {
+        val outVO = new FindByIdGetOutVO();
+        outVO.setCtTypeId(id);
+        outVO.setCtTypeCode("编码");
+        outVO.setCtTypeName("ceshiname");
+        outVO.setEnableFlag("1");
+        outVO.setShortName("jm");
+        outVO.setMemo("beizhucawadfjsldkfjasldkjflksdjfalkj");
+        return outVO;
     }
 }
