@@ -1,9 +1,7 @@
 package com.sephiroth.wzcbase.services.cms.pr;
 
 import com.github.pagehelper.PageInfo;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetInVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetOutVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.FindByIdGetOutVO;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.*;
 
 /**
  * 合同大类
@@ -14,5 +12,7 @@ public interface ContractTypeServices {
 
     FindByIdGetOutVO findById(String id);
 
-//    int putUpdate(PutUpdateInVO param);
+    int putUpdate(PutUpdateInVO param);
+
+    int postInsert(PostInsertInVO param);
 }

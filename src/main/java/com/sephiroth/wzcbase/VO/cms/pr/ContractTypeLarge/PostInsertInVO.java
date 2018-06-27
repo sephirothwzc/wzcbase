@@ -5,35 +5,42 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotNull;
+
+@ApiModel("新增合同大类")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel("分页查询合同大类")
-public class ContractTypeLargeGetOutVO {
+public class PostInsertInVO {
 
-    /**
-     * key
-     */
-    @ApiModelProperty("key")
+    @ApiModelProperty(value = "key")
+    @Length(max = 50)
     private String ctTypeId;
 
     /**
      * 编码
      */
-    @ApiModelProperty("编码")
+    @ApiModelProperty(value = "编码", required = true)
+    @NotNull
+    @Length(max = 20)
     private String ctTypeCode;
 
     /**
      * 名称
      */
-    @ApiModelProperty("名称")
+    @ApiModelProperty(value = "名称", required = true)
+    @NotNull
+    @Length(max = 50)
     private String ctTypeName;
 
     /**
      * 简码
      */
-    @ApiModelProperty("简码")
+    @ApiModelProperty(value = "简码", required = true)
+    @NotNull
+    @Length(max = 50)
     private String shortName;
 
     /**

@@ -1,9 +1,7 @@
 package com.sephiroth.wzcbase.servicesimpl.cms.pr;
 
 import com.github.pagehelper.PageInfo;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetInVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetOutVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.FindByIdGetOutVO;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.*;
 import com.sephiroth.wzcbase.services.cms.pr.ContractTypeServices;
 import com.sephiroth.wzcbase.utilscommon.MockVO;
 import lombok.val;
@@ -40,5 +38,15 @@ public class ContractTypeServicesImpl implements ContractTypeServices {
         outVO.setShortName("jm");
         outVO.setMemo("beizhucawadfjsldkfjasldkjflksdjfalkj");
         return outVO;
+    }
+
+    @Override
+    public int putUpdate(PutUpdateInVO param) {
+        return 1;
+    }
+
+    @Override
+    public int postInsert(PostInsertInVO param) {
+        return 1;
     }
 }

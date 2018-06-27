@@ -1,16 +1,12 @@
 package com.sephiroth.wzcbase.controller.cms.pr;
 
 import com.github.pagehelper.PageInfo;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetInVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.ContractTypeLargeGetOutVO;
-import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.FindByIdGetOutVO;
+import com.sephiroth.wzcbase.VO.cms.pr.ContractTypeLarge.*;
 import com.sephiroth.wzcbase.services.cms.pr.ContractTypeServices;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @Api("合同大类")
 @RestController
@@ -31,7 +27,15 @@ public class ContractTypeLargeController {
         return contractTypeServices.findById(id);
     }
 
-//    public int putUpdate(@Validated PutUpdateInVO param) {
-//        return contractTypeServices.putUpdate(param);
-//    }
+    @ApiOperation(value = "Put:根据key修改，返回受影响行数")
+    @PutMapping(value = "ContractTypeLarge")
+    public int putUpdate(@Validated PutUpdateInVO param) {
+        return contractTypeServices.putUpdate(param);
+    }
+
+    @ApiOperation(value = "Post:新增，返回受影响行数")
+    @PostMapping(value = "ContractTypeLarge")
+    public int postInsert(@Validated PostInsertInVO param) {
+        return contractTypeServices.postInsert(param);
+    }
 }
