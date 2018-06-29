@@ -25,7 +25,9 @@ public class MockVO {
         for(int i=0;i<rowCount;i++) {
             T t = TClass.defaultT(clazz);
             String it = String.valueOf(i);
-            Arrays.stream(clazz.getDeclaredFields()).forEach(p-> {
+            Arrays.stream(clazz.getDeclaredFields())
+                    .filter(p-> p.getType().equals(String.class))
+                    .forEach(p-> {
                 // 获取set
                 String setMethodName="set"+p.getName().substring(0,1).toUpperCase()+p.getName().substring(1);
                 // 调用副本对象的set方法把属性值复制过来
